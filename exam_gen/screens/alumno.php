@@ -15,7 +15,7 @@
     <div class="container">
         <form action="display-exam.php" method="GET" id="generate-questions" class="my-4">
             <label for="question-amount" class="form-label">Número de Preguntas:</label>
-            <input type="number" id="question-amount" name="question-amount" min="2" max="10" required class="form-control mb-3">
+            <input type="number" id="question-amount" name="question-amount" min="5" max="10" required class="form-control mb-3">
             <button type="submit" class="btn btn-success w-100">Generar Examen</button> 
         </form>
     </div>

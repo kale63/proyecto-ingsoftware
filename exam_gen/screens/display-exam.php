@@ -14,10 +14,10 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <button class="btn btn-primary btn-block text-center mx-4" type="button" id="submit-exam">Terminar examen</button>
+            <!--<button class="btn btn-primary btn-block text-center mx-4" type="button" id="submit-exam">Terminar examen</button>-->
             <button class="btn btn-primary btn-block text-center mx-4" type="button" id="previous-question">Anterior</button>
             <button class="btn btn-primary btn-block text-center mx-4" type="button" id="next-question">Siguiente</button>
-            <button class="btn btn-primary btn-block text-center mx-4" type="button" id="help">Ayuda</button>
+            <!--<button class="btn btn-primary btn-block text-center mx-4" type="button" id="help">Ayuda</button>-->
         </div>
     </nav>
 

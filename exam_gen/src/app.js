@@ -11,6 +11,8 @@ let baseJSON = {
     "imagen": ""
 };
 
+let correctAnswers = 0;
+
 function deleteQuestion(id) {
     if (confirm("¿Estás seguro de que deseas eliminar este reactivo?")) {
         $.post(`../src/question-delete.php`, { id: id }, function(response) {
@@ -201,15 +203,11 @@ $(document).ready(function() {
             "opciones": []
         };
     
-        // Initialize an empty array for the options
         finalJSON.opciones = [];
     
-        // Loop through each option div dynamically
         $('.row .col-md-6').each(function() {
-            // Get the `id_opcion` from the input name attribute
             let id = $(this).find('input[type="text"]').attr('name').match(/\d+/)[0];
     
-            // Push the option values into finalJSON
             finalJSON.opciones.push({
                 "texto": $(`input[name="opcion_${id}"]`).val().trim(),
                 "valor": $(`select[name="op${id}_value"]`).val(),
@@ -226,11 +224,9 @@ $(document).ready(function() {
     
         console.log(finalJSON);
     
-        // Extract `id` from URL
         const urlParams = new URLSearchParams(window.location.search);
         const questionId = urlParams.get('id');
     
-        // Check if `questionId` is valid, then update the URL for the POST request
         let url = `../src/question-edit.php?id=${questionId}`;
     
         $.post(url, JSON.stringify(finalJSON), function(response) {
@@ -273,7 +269,7 @@ $(document).ready(function() {
             const questionText = $('#question-text');
             const optionsContainer = $('#respuestas');
     
-            questionText.text(question.definicion);
+            questionText.text(question.base);
     
             optionsContainer.empty();
     
@@ -304,8 +300,6 @@ $(document).ready(function() {
 
         //TOTAL WIP, DOESNT DO SHIT YET
         $('#submit-exam').click(function() {
-            let correctAnswers = 0;
-    
             questions.forEach((question) => {
                 const selectedOption = $(`input[name="question_${question.id}"]:checked`);
                 if (selectedOption.length > 0) {

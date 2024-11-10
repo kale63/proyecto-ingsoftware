@@ -7,7 +7,7 @@ $responseArray = ['success' => false];
 
 $amount = isset($_GET['amount']) ? (int) $_GET['amount'] : 2; 
 
-$questionsQuery = "SELECT id, definicion FROM reactivos ORDER BY RAND() LIMIT $amount";
+$questionsQuery = "SELECT id, base FROM reactivos WHERE eliminado = 0 ORDER BY RAND() LIMIT $amount";
 $questionsResult = $conexion->query($questionsQuery);
 
 if ($questionsResult && $questionsResult->num_rows > 0) {
@@ -32,7 +32,7 @@ if ($questionsResult && $questionsResult->num_rows > 0) {
 
         $questions[] = [
             'id' => $questionRow['id'],
-            'definicion' => $questionRow['definicion'],
+            'base' => $questionRow['base'],
             'options' => $options
         ];
     }

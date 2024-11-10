@@ -26,7 +26,7 @@ if ($id > 0) {
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
         <div class="container-fluid">
-            <a class="navbar-brand">Crear un Nuevo Reactivo</a>
+            <a class="navbar-brand">Editar Reactivo</a>
         </div>
     </nav>
 

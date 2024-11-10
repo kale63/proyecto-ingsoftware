@@ -2,8 +2,8 @@
     $conexion = @mysqli_connect(
         'localhost',
         'root',
-        'contraseña',
-        'base usada'
+        'californication',
+        'examen_practica'
     );
 
     if(!$conexion) {
